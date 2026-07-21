@@ -25,7 +25,7 @@ class Carrito:
             subtotal += item["precio"] * item["cantidad"]
         return subtotal
 #________________________CAMBIAR STR POR INT!!!!!!!_____________________________
-    def aplicar_descuento(self, codigo: str) -> float:
+    def aplicar_descuento(self, codigo: int) -> float:
         subtotal = self.calcular_subtotal()
         if codigo == "BIENVENIDA":
             return subtotal * 0.90  # 10% de descuento corregido

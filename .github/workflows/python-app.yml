@@ -29,3 +29,5 @@ jobs:
           pip install ruff mypy
       - name: Lint with ruff
         run: ruff check carrito.py
+      - name: Type check with mypy
+        run: mypy --strict carrito.py
