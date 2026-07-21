@@ -17,6 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       MY_DATABASE_KEY: ${{ secrets.MY_DATABASE_KEY }}
+      VARIABLE: ${{ vars.VARIABLE }}
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python 3.10
@@ -32,5 +33,7 @@ jobs:
         run: ruff check carrito.py
       - name: Type check with mypy
         run: mypy --strict carrito.py
-      - name: Ejecutando pruebas
+      - name: Ejecutando secreto
         run: echo Ejecutando secretos $MY_DATABASE_KEY
+      - name: Ejecutando variable
+        run: echo Ejecutando secretos $VARIABLE
